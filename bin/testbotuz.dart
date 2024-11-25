@@ -1,9 +1,22 @@
+import 'dart:io';
+
 import 'package:teledart/teledart.dart';
 import 'package:teledart/telegram.dart';
 
 void main(List<String> arguments) async{
-  final botToken = '7971765646:AAHTr_6QnG9Cfm9q8IL2gzTAiqC7WELeS1E';
-  final username = (await Telegram(botToken).getMe()).username;
+
+  var botToken = Platform.environment['BOT_TOKEN'];
+
+  print(botToken);
+  if (botToken == null) {
+    print('xatolik bot ');
+    return;
+  }
+
+
+
+  //final botToken = '7971765646:AAHTr_6QnG9Cfm9q8IL2gzTAiqC7WELeS1E';
+  final username = (await Telegram(botToken!).getMe()).username;
   final bot = TeleDart(botToken, Event(username!));
   bot.start();
   print('start-bot');

@@ -1,4 +1,4 @@
-app = "bot" # Fly.io ilovangiz nomini yozing
+app = "bot-q-kz1q" # Fly.io ilovangiz nomini yozing
 
 [build]
 image = "dart:latest" # Docker image (Dart uchun tayyor)
